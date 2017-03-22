@@ -12,5 +12,10 @@ class template
     var $file =''; // html faili nimi
     var $content = false; // html malli faili sisu
     var $vars = array(); // html vaade sisu - reaalsed väärtused
-}klassi lõpp
+    // klassi tegevused - meetodid - funktsioonid
+    // loeme sisu html maili failist
+    function readFile ($f){
+        $this->content = file_get_contents($f);
+    }// readFile
+}// klassi lõpp
 ?>
