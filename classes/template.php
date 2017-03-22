@@ -28,7 +28,8 @@ class template
             echo 'Kataloogi '.TMPL_DIR.' ei ole leitud<br />';
             exit;
         }
-        // kui fail on olemas ja lugemiseks sobiv
+        // lisame TMPL_DIR kasutusele
+        $f = TMPL_DIR.$this->file; // veel üks lokaalne asendus
         if(file_exists($f) and is_file($f) and is_readable($f)){
             // loeme failist malli sisu
             $this->readFile($f);
