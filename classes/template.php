@@ -50,7 +50,7 @@ class template
 
         // lisame alamkataloogid kasutusele
         $f = TMPL_DIR.str_replace('.', '/', $this->file).'.html'; // veel üks lokaalne asendus
-        if(file_exists($f) and is_file($f) and is_readable($f)) {
+        if(file_exists($f) and is_file($f) and is_readable($f)){
             // loeme failist malli sisu
             $this->readFile($f);
         }
