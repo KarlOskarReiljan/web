@@ -10,5 +10,10 @@
 require_once 'conf.php';
 // pealehe sisu
 echo '<h1>Veebiprogrammeerimise esileht</h1>';
-
+// valmistame peatemplate objekti
+$main_tmpl = new template(TMPL_DIR.'main.html');
+// kontrollime antud objekti sisu
+echo '<pre>';
+print_r($main_tmpl);
+echo '</pre>';
 ?>
