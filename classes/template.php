@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: karl-oskar.reiljan
  * Date: 22.03.2017
  * Time: 12:14
  */
-
 class template
 {// klassi algus
     // template klassi omadused - muutujad
-    var $file =''; // html faili nimi
+    var $file = ''; // html malli faili nimi
     var $content = false; // html malli faili sisu
     var $vars = array(); // html vaade sisu - reaalsed väärtused
     // klassi tegevused - meetodid - funktsioonid
@@ -28,6 +28,12 @@ class template
             echo 'Kataloogi '.TMPL_DIR.' ei ole leitud<br />';
             exit;
         }
+        // kui fail on olemas ja lugemiseks sobiv
+        if(file_exists($f) and is_file($f) and is_readable($f)){
+            // loeme failist malli sisu
+            $this->readFile($f);
+        }
+
         // lisame TMPL_DIR kasutusele
         $f = TMPL_DIR.$this->file; // veel üks lokaalne asendus
         if(file_exists($f) and is_file($f) and is_readable($f)){
@@ -36,7 +42,7 @@ class template
         }
 
         // lisame .html laienduse kasutusele
-        $f = TMPL_DIR.$this->file.'.html';// veel üks lokaalne asendus
+        $f = TMPL_DIR.$this->file.'.html'; // veel üks lokaalne asendus
         if(file_exists($f) and is_file($f) and is_readable($f)){
             // loeme failist malli sisu
             $this->readFile($f);
@@ -48,9 +54,15 @@ class template
         }
     }// loadFile
 
-    // loeme sisu html maili failist
-    function readFile ($f){
+    // loeme sisu html malli failist
+    function readFile($f){
         $this->content = file_get_contents($f);
     }// readFile
+
+    // koostame paarid malli_elemendi_nimi => reaalne_väärtus
+    function set($name, $val){
+        $this->vars[$name] = $val;
+    }//set
+
 }// klassi lõpp
 ?>
