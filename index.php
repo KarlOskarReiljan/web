@@ -17,6 +17,7 @@ $main_tmpl->set('title', 'Pealeht');
 $main_tmpl->set('lang_bar', 'Keeleriba');
 $main_tmpl->set('menu', 'Lehe peamenüü');
 $main_tmpl->set('content', 'Lehe sisu');
+$main_tmpl->set('site_title', 'Veebiprogrammeerimise kursus');
 // kontrollime antud objekti sisu
 echo $main_tmpl->parse();
 ?>
