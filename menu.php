@@ -7,7 +7,7 @@
  */
 // loome menüü mallide objektid
 $menu = new template('menu.menu');
-$item = new template('menu-item');
+$item = new template('menu.item');
 // lisame sisu
 $item->set('name', 'esimene');
 $menu->set('items', $item->parse());
