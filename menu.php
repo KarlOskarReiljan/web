@@ -8,6 +8,9 @@
 // loome menüü mallide objektid
 $menu = new template('menu.menu');
 $item = new template('menu-item');
+// lisame sisu
+$item->set('name', 'esimene');
+$menu->set('items', $item->parse());
 // kontrollime objekti olemasolu ja sisu
 echo '<pre>';
 print_r($menu);
