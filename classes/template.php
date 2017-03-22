@@ -62,14 +62,14 @@ class template
     // koostame paarid malli_elemendi_nimi => reaalne_väärtus
     function set($name, $val){
         $this->vars[$name] = $val;
-    }//set
+    }// set
 
-    // html malli täitmine
+    // html malli täitmine reaalse sisuga
     function parse(){
         $str = $this->content; // lokaalne asendus
         // vaatame malli elementide massiivi
         foreach ($this->vars as $name=>$val){
-            $str = str_replace('{',$name.'}', $val, $str);
+            $str = str_replace('{'.$name.'}', $val, $str);
         }
         // tagastame täis täidetud malli sisu
         return $str;
