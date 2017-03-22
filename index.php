@@ -18,7 +18,5 @@ $main_tmpl->set('lang_bar', 'Keeleriba');
 $main_tmpl->set('menu', 'Lehe peamenüü');
 $main_tmpl->set('content', 'Lehe sisu');
 // kontrollime antud objekti sisu
-echo '<pre>';
-print_r($main_tmpl);
-echo '</pre>';
+$main_tmpl->parse();
 ?>
