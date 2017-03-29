@@ -11,7 +11,13 @@ class http
     // klassi muutujad
     var $vars = array(); // http päringute andmed
     var $server = array(); // serveri (masina) andmed
-    //klassi meetodid
+    // klassi meetodid
+
+    // klassi konstruktor
+    function __construct(){
+        $this->init();
+        $this->initCont();
+    }
 
     // paneme algandmed paika - initsialiseerime neid
     function init(){
@@ -19,7 +25,7 @@ class http
         $this->server = $_SERVER;
     }// init
 
-    //defineerime vajalikud konstandid
+    // defineerime vajalikud konstandid
     function initCont(){
         $consts = array('REMOTE_ADDR', 'HTTP_HOST', 'PHP_SELF', 'SCRIPT_NAME');
         foreach ($consts as $const){
