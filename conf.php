@@ -16,6 +16,6 @@ require_once CLASSES_DIR.'linkobject.php';
 
 // loome vajalikud objektid projekti tööks
 $http = new linkobject();
-// testime http objekti tööd
-echo REMOTE_ADDR;
+// testime linkobjecti tööd
+echo $http->baseUrl;
 ?>
