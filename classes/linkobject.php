@@ -21,4 +21,13 @@ class linkobject extends http
         // loome põhilink
         $this->baseUrl = $this->protocol.HTTP_HOST.SCRIPT_NAME;
     }// konstruktor
+
+    // andmete paari koostamine kujul
+    // nimi=väärtus&nimi1=väärtus1 jne
+    function addToLink($link, $nimi, $val){
+        if($link !=''){
+            $link = $link.$this->$delim;
+        }
+        $link = $link.
+    }// addToLink
 }// klassi lõpp
