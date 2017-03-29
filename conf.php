@@ -16,8 +16,7 @@ require_once CLASSES_DIR.'http.php';
 // loome vajalikud objektid projekti tööks
 $http = new http();
 $http->init();
-// testinme http objekti tööd
-echo '<pre>';
-print_r($http);
-echo '</pre>';
+$http->initCont();
+// testime http objekti tööd
+echo REMOTE_ADDR;
 ?>
