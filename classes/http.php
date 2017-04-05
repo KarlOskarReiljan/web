@@ -25,27 +25,27 @@ class http
         $this->server = $_SERVER;
     }// init
 
-    // defineerime vajalikud konstandid
+    //defineerime vajalikud konstandid
     function initCont(){
         $consts = array('REMOTE_ADDR', 'HTTP_HOST', 'PHP_SELF', 'SCRIPT_NAME');
         foreach ($consts as $const){
             if(!defined($const) and isset($this->server[$const])){
-                define ($const, $this->server[$const]);
+                define($const, $this->server[$const]);
             }
         }
     }// initConst
 
     // saame kätte veebis olevad andmed - nagu $_POST või $_GET - emulatsioon
     // tegelikult need andmed on kas lingi kaudu saadud
-    function get($name,){
+    function get($name){
         // kui vastava nimega element eksisteerib andmete massiivis
         if($this->vars[$name]){
+            // tagastame selle väärtus
             return $this->vars[$name];
         }
         // muidu tagastame tühi väärtus
-
         return false;
-    }//get
+    }// get
 
 }// klassi lõpp
 ?>
