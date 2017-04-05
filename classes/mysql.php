@@ -32,14 +32,14 @@ class mysql
         }
     }// connect
 
-    //päringu teostamine
-    function query($sql)
-    {
+    // päringu teostamine
+    function query($sql){
         $res = mysqli_query($this->conn, $sql);
-        if ($res == false) {
+        if($res == false){
             echo 'Viga päringus!<br />';
-            echo '<b>' . $sql . '</b><br />';
-            echo mysqli_error($this,->conn).'<br />';
+            echo '<b>'.$sql.'</b><br />';
+            echo mysqli_error($this->conn).'<br />';
+            exit;
         }
         return $res;
     }// query
