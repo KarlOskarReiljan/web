@@ -13,6 +13,7 @@ if(file_exists($fn) and is_file($fn) and is_readable($fn)){
     // loeme sisu
     require_once $fn;
 } else {
-    $fn = ACTS_DIR.'default'.'.php';
+    $fn = ACTS_DIR.'default'.'.php'; // koostame vaikimisi oleva faili nimi
+    $http->('act', DEFAULT_ACT); // paneme act väärtuseks default - act=default
     require_once $fn;
 }
