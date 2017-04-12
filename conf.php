@@ -38,7 +38,6 @@ $siteLangs = array(
 
 //kontrollime, milline keel on hetkel aktiivne
 $lang_id = $http->get('lang_id');
-echo $lang_id;
 // kontrollime, kas selline keel keelemassiivis olemas
 if(!isset($siteLangs[$lang_id])){
     // kui pole - määrame vaikimisi keel
@@ -47,5 +46,4 @@ if(!isset($siteLangs[$lang_id])){
 }
 // määrame mugavuseks aktiivse keele konstandi
 define('LANG_ID', $lang_id);
-echo 'LANG_ID'.LANG_ID;
 ?>
