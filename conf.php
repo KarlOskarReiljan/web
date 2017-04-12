@@ -30,7 +30,7 @@ $db = new mysql(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 // lisame keele tugi
 // lehe keelevahetuseka määratud keeled
-$sitesLangs = array(
+$siteLangs = array(
     'et' => 'estonian',
     'en' => 'english',
     'ru' => 'russian'
@@ -38,12 +38,14 @@ $sitesLangs = array(
 
 //kontrollime, milline keel on hetkel aktiivne
 $lang_id = $http->get('lang_id');
+echo $lang_id;
 // kontrollime, kas selline keel keelemassiivis olemas
-if(!isset($sitesLangs[$lang_id])){
+if(!isset($siteLangs[$lang_id])){
     // kui pole - määrame vaikimisi keel
     $lang_id = DEFAULT_LANG;
     $http->set('lang_id', $lang_id);
 }
 // määrame mugavuseks aktiivse keele konstandi
 define('LANG_ID', $lang_id);
+echo 'LANG_ID'.LANG_ID;
 ?>
