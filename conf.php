@@ -12,6 +12,7 @@ define('LIB_DIR', 'lib/'); // lib kataloogi nime konstant
 define('ACTS_DIR', 'acts/'); // acts kataloogi nime konstant
 
 define('DEFAULT_ACT', 'default'); // vaikimisi tegevuse faili nime konstant
+define('DEFAULT_LANG', 'et'); // vaikimisi keele määramine
 
 // võtame kasutusele vajalikud abifailid
 require_once LIB_DIR.'utils.php';
@@ -26,11 +27,7 @@ require_once CLASSES_DIR.'mysql.php';
 // loome vajalikud objektid projekti tööks
 $http = new linkobject();
 $db = new mysql(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-// testime andmebaasi objekti
-$res = $db->query('SELECT NOW()');
-echo '<pre>';
-print_r($res);
-echo '</pre>';
+
 
 
 ?>
