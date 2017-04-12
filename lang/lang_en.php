@@ -9,5 +9,8 @@ $_trans = array(
     'Esimene leht' => 'First page',
     'Teine leht' => 'Second page',
     'avaleht' => 'main page',
-    'Lehe peamenüü' => 'Page menu'
+    'Lehe peamenüü' => 'Page menu',
+    'eesti' => 'estonian',
+    'inglise' => 'english',
+    'vene' => 'russian'
 );
