@@ -29,9 +29,21 @@ $http = new linkobject();
 $db = new mysql(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 // lisame keele tugi
-$lang_id = DEFAULT_LANG;
-$http->set('lang_id', $lang_id)
+// lehe keelevahetuseka määratud keeled
+$sitesLangs = array(
+    'et' => 'estonian',
+    'en' => 'english',
+    'ru' => 'russian'
+);
 
-
-
+//kontrollime, milline keel on hetkel aktiivne
+$lang_id = $http->get('lang_id');
+// kontrollime, kas selline keel keelemassiivis olemas
+if(!isset($sitesLangs[$lang_id])){
+    // kui pole - määrame vaikimisi keel
+    $lang_id = DEFAULT_LANG;
+    $http->set('lang_id', $lang_id);
+}
+// määrame mugavuseks aktiivse keele konstandi
+define('LANG_ID', $lang_id);
 ?>
