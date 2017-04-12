@@ -32,4 +32,6 @@ $db = new mysql(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $lang_id = DEFAULT_LANG;
 $http->set('lang_id', $lang_id)
 
+
+
 ?>
