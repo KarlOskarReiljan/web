@@ -55,5 +55,3 @@ class session
     }// createSession
 
 }// klassi lõpp
-
-}// klassi lõpp
