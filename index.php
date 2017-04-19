@@ -12,7 +12,7 @@ echo '<h1>Veebiprogrammeerimise esileht</h1>';
 // valmistame peatemplate objekti
 $main_tmpl = new template('main');
 // valmistame paarid malli_element => väärtus
-$main_tmpl->set('user', 'Kasutajanimi');
+$main_tmpl->set('user', $sess->user_data['username']);
 $main_tmpl->set('title', tr('Pealeht'));
 // lisame keeleriba pealehele
 require_once 'lang.php';
@@ -24,4 +24,6 @@ require_once 'act.php';
 $main_tmpl->set('site_title', 'Veebiprogrammeerimise kursus');
 // kontrollime antud objekti sisu
 echo $main_tmpl->parse();
+// uuendame sessiooni andmed
+$sess->flush();
 ?>
