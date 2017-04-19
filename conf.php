@@ -25,10 +25,16 @@ require_once CLASSES_DIR.'template.php';
 require_once CLASSES_DIR.'http.php';
 require_once CLASSES_DIR.'linkobject.php';
 require_once CLASSES_DIR.'mysql.php';
+require_once CLASSES_DIR.'session.php';
 
 // loome vajalikud objektid projekti tööks
 $http = new linkobject();
 $db = new mysql(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$sess = new session($http, $db);
+// kontrollime sess objekti tööd
+echo '<pre>';
+print_r($sess);
+echo '</pre>'
 
 // lisame keele tugi
 // lehe keelevahetuseka määratud keeled
