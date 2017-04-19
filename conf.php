@@ -34,7 +34,7 @@ $sess = new session($http, $db);
 // kontrollime sess objekti tööd
 echo '<pre>';
 print_r($sess);
-echo '</pre>'
+echo '</pre>';
 
 // lisame keele tugi
 // lehe keelevahetuseka määratud keeled
