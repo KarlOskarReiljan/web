@@ -50,7 +50,7 @@ class http
     // lisame vajalikud väärtused veebi kujul nimi=väärtus
     function set($name, $val){
         $this->vars[$name] = $val;
-    }//set
+    }// set
 
     // eemaldame ebavajalikud andmed veebist
     function del($name){
