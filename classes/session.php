@@ -93,6 +93,9 @@ class session
                     $this->sid = false;
                     $this->http->del('sid');
                 }
+                // lisame anonüümse kasutaja rolli ja id
+                define('ROLE_ID', 0);
+                define('USER_ID', 0);
             } else{
                 // kui andmebaasist on võimalik sessiooni
                 // kohta andmed saada
@@ -104,12 +107,26 @@ class session
                 $this->vars = $vars;
                 // nüüd kasutaja andmed
                 $user_data = unserialize($res[0]['user_data']);
+                define('ROLE_ID', $user_data['role_id']);
+                define('USER_ID', $user_data['user_id']);
                 $this->user_data = $user_data;
             }
         } else {
             // kui $this->sid === false
             // hetkel sessiooni pole
-            echo 'Sessiooni hetkel pole<br />';
+//			// echo 'Sessiooni hetkel pole<br />';
+            define('ROLE_ID', 0);
+            define('USER_ID', 0);
         }
     }// checkSession
+
+    // sessiooni uuendamine
+    function flush(){
+        if($this->sid !== false){
+            $sql = 'UPDATE session SET changed=NOW(), '.
+                'svars='.fixDb(serialize($this->vars)).
+                ' WHERE sid='.fixDb($this->sid);
+            $this->db->query($sql);
+        }
+    }
 }// klassi lõpp
