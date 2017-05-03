@@ -126,7 +126,3 @@ class session
             $sql = 'UPDATE session SET changed=NOW(), '.
                 'svars='.fixDb(serialize($this->vars)).
                 ' WHERE sid='.fixDb($this->sid);
-            $this->db->query($sql);
-        }
-    }
-}// klassi lõpp
