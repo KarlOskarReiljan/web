@@ -126,3 +126,27 @@ class session
             $sql = 'UPDATE session SET changed=NOW(), '.
                 'svars='.fixDb(serialize($this->vars)).
                 ' WHERE sid='.fixDb($this->sid);
+            $this->db->query($sql);
+        }
+    }
+
+    // sessiooni andmete lisamine
+    function set($name, $val){
+        $this->vars[$name] = $val;
+    }// set
+
+    // sessiooni andmete võtmine
+    function get($name){
+        if(isset($this->vars[$name])){
+            return $this->vars[$name];
+        }
+        return false;
+    }// get
+
+    function del($name){
+        if(isset($this->vars[$name])){
+            unset($this->vars[$name]);
+        }
+    }// del
+
+}// klassi lõpp->sid);
