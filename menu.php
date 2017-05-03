@@ -28,7 +28,12 @@ if($res != false){
     }
 }
 // sisse logimine
-
+if(USER_ID == ROLE_NONE){
+    $item->set('name', tr('Logi sisse'));
+    $link = $http->getLink(array('act'=>'login'));
+    $item->set('link', $link);
+    $menu->add('items', $item->parse());
+}
 
 // kontrollime objekti olemasolu ja sisu
 // kui soovime pidevat asendamist, siis set funktsioon add asemel
