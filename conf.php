@@ -15,6 +15,11 @@ define('LANG_DIR', 'lang/'); // lang kataloogi nime konstant
 define('DEFAULT_ACT', 'default'); // vaikimisi tegevuse faili nime konstant
 define('DEFAULT_LANG', 'et'); // vaikimisi keele määramine
 
+// kasutajate rollid
+define('ROLE_NONE', 0);
+define('ROLE_ADMIN', 1);
+define('ROLE_USER', 2);
+
 // võtame kasutusele vajalikud abifailid
 require_once LIB_DIR.'utils.php';
 require_once LIB_DIR.'trans.php'; // kutsume tõlkifunktsiooni asukoht
