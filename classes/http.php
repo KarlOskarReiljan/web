@@ -67,7 +67,7 @@ class http
         if($url == false){
             $url = $this->getLink();
         }
-        $url = str_replace('&aump;', '&', $url);
+        $url = str_replace('&amp;', '&', $url);
         header('Location: '.$url);
         exit;
     }// redirect
