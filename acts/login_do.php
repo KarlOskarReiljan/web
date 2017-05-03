@@ -10,15 +10,17 @@ $username = $http->get('kasutaja');
 $passwd = $http->get('parool');
 
 // koostame päringu kasutaja kontrollimiseks andmebaasis
-$sql = 'SELECT * FROM user'.
+$sql = 'SELECT * FROM user '.
     'WHERE username='.fixDb($username).
-    ' AND password ='.fixDb(md5($passwd));
+    ' AND password='.fixDb(md5($passwd));
 $res = $db->getArray($sql);
 
 // teeme päringu tulemuse kontroll
 if($res == false){
+    // loome veateade ja paneme see sessiooni
+    $sess->set('error', 'Probleem sisselogimisega');
     // siis tuleb suunata kasutaja sisselogimisvormi tagasi
-    £link = $http->getLink(array('act' => 'login'));
+    $link = $http->getLink(array('act' => 'login'));
     $http->redirect($link);
 } else {
     // sisse tuleb avada kasutajale sessiooni
